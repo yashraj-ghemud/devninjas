@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevNinja: The Ultimate Learning Ecosystem</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Particle Background System -->
+    <div class="particle-system">
+        <div class="stars-layer"></div>
+        <div class="nebula-layer"></div>
+        <div class="energy-streams"></div>
+        <div class="floating-particles"></div>
+    </div>
+
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <div class="logo-formation">
+                <h1 class="loading-title">DevNinja</h1>
+                <div class="subtitle">The Ultimate Learning Ecosystem</div>
+            </div>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+            <div class="loading-text">Initializing Neural Networks...</div>
+        </div>
+    </div>
+
+    <!-- Main Application -->
+    <div class="main-app hidden" id="mainApp">
+        <!-- Navigation Header -->
+        <header class="nav-header">
+            <div class="nav-container">
+                <div class="logo-section">
+                    <h1 class="main-logo">DevNinja</h1>
+                    <span class="tagline">Breaking Learning Barriers</span>
+                </div>
+                <nav class="main-nav">
+                    <button class="nav-btn active" data-section="hub"><i class="fas fa-home"></i> Hub</button>
+                    <button class="nav-btn" data-section="ai-tutor"><i class="fas fa-robot"></i> AI Tutor</button>
+                    <button class="nav-btn" data-section="skills"><i class="fas fa-tree"></i> Skills</button>
+                    <button class="nav-btn" data-section="vr"><i class="fas fa-vr-cardboard"></i> VR</button>
+                    <button class="nav-btn" data-section="collaborate"><i class="fas fa-users"></i> Collaborate</button>
+                </nav>
+                <div class="accessibility-controls">
+                    <button class="accessibility-btn" id="accessibilityToggle">
+                        <i class="fas fa-universal-access"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Hub Section -->
+        <section class="hub-section active-section" id="hub">
+            <div class="hub-container">
+                <div class="welcome-animation">
+                    <h2 class="section-title glitch-text">Welcome to the Future of Learning</h2>
+                    <p class="section-description">Explore revolutionary educational technologies that break down every barrier to learning</p>
+                </div>
+
+                <div class="learning-modules-grid">
+                    <!-- 3D Learning Hub Module -->
+                    <div class="learning-module" data-module="3d-hub">
+                        <div class="module-icon">
+                            <i class="fas fa-cube rotating-3d"></i>
+                        </div>
+                        <h3 class="module-title">3D Learning Hub</h3>
+                        <p class="module-desc">Immersive 3D environments with floating elements and spatial learning</p>
+                        <div class="module-features">
+                            <span class="feature-tag">Particle Effects</span>
+                            <span class="feature-tag">3D Navigation</span>
+                            <span class="feature-tag">Spatial Memory</span>
+                        </div>
+                        <div class="interaction-preview">
+                            <div class="floating-elements">
+                                <div class="float-element"></div>
+                                <div class="float-element"></div>
+                                <div class="float-element"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AI Tutor Module -->
+                    <div class="learning-module" data-module="ai-tutor" onclick="DevNinja.navigateToSection('ai-tutor')">
+                        <div class="module-icon">
+                            <i class="fas fa-robot pulse-glow"></i>
+                        </div>
+                        <h3 class="module-title">AI Tutor Avatar</h3>
+                        <p class="module-desc">Personalized AI instructor with emotional intelligence and adaptive teaching</p>
+                        <div class="module-features">
+                            <span class="feature-tag">Voice Recognition</span>
+                            <span class="feature-tag">Emotional AI</span>
+                            <span class="feature-tag">Adaptive Learning</span>
+                        </div>
+                        <div class="ai-preview">
+                            <div class="ai-avatar">
+                                <div class="avatar-face">
+                                    <div class="eye left-eye"></div>
+                                    <div class="eye right-eye"></div>
+                                    <div class="mouth"></div>
+                                </div>
+                                <div class="voice-waves">
+                                    <div class="wave"></div>
+                                    <div class="wave"></div>
+                                    <div class="wave"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Gamified Skills Module -->
+                    <div class="learning-module" data-module="skills" onclick="DevNinja.navigateToSection('skills')">
+                        <div class="module-icon">
+                            <i class="fas fa-tree skill-tree"></i>
+                        </div>
+                        <h3 class="module-title">Gamified Skill Trees</h3>
+                        <p class="module-desc">Interactive progress tracking with achievements and level progression</p>
+                        <div class="module-features">
+                            <span class="feature-tag">XP System</span>
+                            <span class="feature-tag">Achievements</span>
+                            <span class="feature-tag">Leaderboards</span>
+                        </div>
+                        <div class="skill-preview">
+                            <div class="skill-nodes">
+                                <div class="skill-node unlocked"></div>
+                                <div class="skill-node current"></div>
+                                <div class="skill-node locked"></div>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- VR Classroom Module -->
+                    <div class="learning-module" data-module="vr" onclick="DevNinja.navigateToSection('vr')">
+                        <div class="module-icon">
+                            <i class="fas fa-vr-cardboard vr-effect"></i>
+                        </div>
+                        <h3 class="module-title">VR Classroom</h3>
+                        <p class="module-desc">Immersive virtual reality learning environments and simulations</p>
+                        <div class="module-features">
+                            <span class="feature-tag">360° Learning</span>
+                            <span class="feature-tag">Virtual Labs</span>
+                            <span class="feature-tag">Field Trips</span>
+                        </div>
+                        <div class="vr-preview">
+                            <div class="vr-headset">
+                                <div class="vr-display">
+                                    <div class="vr-scene"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Collaboration Module -->
+                    <div class="learning-module" data-module="collaborate" onclick="DevNinja.navigateToSection('collaborate')">
+                        <div class="module-icon">
+                            <i class="fas fa-users collaboration-pulse"></i>
+                        </div>
+                        <h3 class="module-title">Peer Collaboration</h3>
+                        <p class="module-desc">Real-time collaborative learning with global peer connections</p>
+                        <div class="module-features">
+                            <span class="feature-tag">Real-time Sync</span>
+                            <span class="feature-tag">Global Network</span>
+                            <span class="feature-tag">Peer Tutoring</span>
+                        </div>
+                        <div class="collab-preview">
+                            <div class="peer-avatars">
+                                <div class="peer-avatar active"></div>
+                                <div class="peer-avatar typing"></div>
+                                <div class="peer-avatar speaking"></div>
+                            </div>
+                            <div class="connection-lines">
+                                <div class="connection-line"></div>
+                                <div class="connection-line"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Accessibility Dashboard Module -->
+                    <div class="learning-module" data-module="accessibility">
+                        <div class="module-icon">
+                            <i class="fas fa-universal-access accessibility-glow"></i>
+                        </div>
+                        <h3 class="module-title">Accessibility Center</h3>
+                        <p class="module-desc">Comprehensive assistive technologies and inclusive design features</p>
+                        <div class="module-features">
+                            <span class="feature-tag">Text-to-Speech</span>
+                            <span class="feature-tag">Sign Language</span>
+                            <span class="feature-tag">High Contrast</span>
+                        </div>
+                        <div class="accessibility-preview">
+                            <div class="access-tools">
+                                <div class="tool-icon speaker"><i class="fas fa-volume-up"></i></div>
+                                <div class="tool-icon eye"><i class="fas fa-eye"></i></div>
+                                <div class="tool-icon hands"><i class="fas fa-hands"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Tutor Section -->
+        <section class="section-view hidden" id="ai-tutor">
+            <div class="section-container">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <i class="fas fa-robot pulse-glow"></i>
+                    </div>
+                    <div>
+                        <h1 class="section-title">AI Tutor</h1>
+                        <p class="section-subtitle">Your Personalized Learning Companion</p>
+                    </div>
+                </div>
+
+                <div class="ai-tutor-content">
+                    <!-- Tutor Personality Selection -->
+                    <div class="tutor-personalities">
+                        <h3>Choose Your AI Tutor</h3>
+                        <div class="personality-grid" id="personalityGrid">
+                            <!-- Personalities will be loaded by JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Subject Selection -->
+                    <div class="subject-selection">
+                        <h3>Select Subject</h3>
+                        <div class="subject-grid" id="subjectGrid">
+                            <!-- Subjects will be loaded by JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- AI Chat Interface -->
+                    <div class="ai-chat-interface">
+                        <div class="chat-container">
+                            <div class="ai-avatar-large">
+                                <div class="avatar-display" id="selectedTutorAvatar">
+                                    <div class="avatar-face">
+                                        <div class="eye left-eye"></div>
+                                        <div class="eye right-eye"></div>
+                                        <div class="mouth talking" id="tutorMouth"></div>
+                                    </div>
+                                    <div class="voice-indicator">
+                                        <div class="voice-wave"></div>
+                                        <div class="voice-wave"></div>
+                                        <div class="voice-wave"></div>
+                                    </div>
+                                </div>
+                                <div class="tutor-name" id="tutorName">Alex - Friendly Guide</div>
+                            </div>
+                            
+                            <div class="chat-messages" id="chatMessages">
+                                <div class="message ai-message">
+                                    <div class="message-content">
+                                        <p>Hello! I'm your AI learning companion. I can help you with step-by-step explanations, practice problems, and personalized learning recommendations. What subject would you like to explore today?</p>
+                                    </div>
+                                    <div class="message-time">Just now</div>
+                                </div>
+                            </div>
+                            
+                            <div class="chat-input-area">
+                                <div class="input-container">
+                                    <input type="text" id="chatInput" placeholder="Ask me anything about your studies..." class="form-control">
+                                    <button class="btn btn--primary" id="sendMessageBtn">
+                                        <i class="fas fa-paper-plane"></i>
+                                    </button>
+                                    <button class="btn btn--secondary" id="voiceInputBtn">
+                                        <i class="fas fa-microphone"></i>
+                                    </button>
+                                </div>
+                                <div class="quick-actions">
+                                    <button class="quick-action-btn" data-question="Explain this concept">
+                                        <i class="fas fa-lightbulb"></i> Explain Concept
+                                    </button>
+                                    <button class="quick-action-btn" data-question="Give me practice problems">
+                                        <i class="fas fa-brain"></i> Practice Problems
+                                    </button>
+                                    <button class="quick-action-btn" data-question="Show learning path">
+                                        <i class="fas fa-route"></i> Learning Path
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Progress Dashboard -->
+                    <div class="ai-progress-dashboard">
+                        <h3>Learning Analytics</h3>
+                        <div class="progress-stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-icon"><i class="fas fa-questions"></i></div>
+                                <div class="stat-info">
+                                    <div class="stat-number">147</div>
+                                    <div class="stat-label">Questions Answered</div>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon"><i class="fas fa-clock"></i></div>
+                                <div class="stat-info">
+                                    <div class="stat-number">23.5h</div>
+                                    <div class="stat-label">Learning Time</div>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon"><i class="fas fa-trophy"></i></div>
+                                <div class="stat-info">
+                                    <div class="stat-number">12</div>
+                                    <div class="stat-label">Concepts Mastered</div>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon"><i class="fas fa-chart-line"></i></div>
+                                <div class="stat-info">
+                                    <div class="stat-number">85%</div>
+                                    <div class="stat-label">Success Rate</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="section-view hidden" id="skills">
+            <div class="section-container">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <i class="fas fa-tree skill-tree"></i>
+                    </div>
+                    <div>
+                        <h1 class="section-title">Skill Trees</h1>
+                        <p class="section-subtitle">Interactive Progress Tracking & Achievement System</p>
+                    </div>
+                </div>
+
+                <div class="skills-content">
+                    <!-- Skill Categories -->
+                    <div class="skill-categories">
+                        <h3>Skill Categories</h3>
+                        <div class="category-tabs" id="categoryTabs">
+                            <!-- Categories will be loaded by JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Skill Tree Visualization -->
+                    <div class="skill-tree-container">
+                        <div class="skill-tree-canvas" id="skillTreeCanvas">
+                            <!-- Skill tree will be generated by JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Achievement Gallery -->
+                    <div class="achievement-gallery">
+                        <h3>Achievement Gallery</h3>
+                        <div class="achievements-grid" id="achievementsGrid">
+                            <!-- Achievements will be loaded by JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Leaderboard -->
+                    <div class="leaderboard-section">
+                        <h3>Global Leaderboard</h3>
+                        <div class="leaderboard-list">
+                            <div class="leaderboard-item rank-1">
+                                <div class="rank-badge">1</div>
+                                <div class="player-info">
+                                    <span class="player-name">CodeMaster2024</span>
+                                    <span class="player-score">15,420 XP</span>
+                                </div>
+                                <div class="player-skills">
+                                    <span class="skill-badge">Web Dev</span>
+                                    <span class="skill-badge">Python</span>
+                                </div>
+                            </div>
+                            <div class="leaderboard-item rank-2">
+                                <div class="rank-badge">2</div>
+                                <div class="player-info">
+                                    <span class="player-name">DesignNinja</span>
+                                    <span class="player-score">14,850 XP</span>
+                                </div>
+                                <div class="player-skills">
+                                    <span class="skill-badge">Digital Art</span>
+                                    <span class="skill-badge">UI/UX</span>
+                                </div>
+                            </div>
+                            <div class="leaderboard-item rank-3">
+                                <div class="rank-badge">3</div>
+                                <div class="player-info">
+                                    <span class="player-name">DataExplorer</span>
+                                    <span class="player-score">13,920 XP</span>
+                                </div>
+                                <div class="player-skills">
+                                    <span class="skill-badge">Data Science</span>
+                                    <span class="skill-badge">AI/ML</span>
+                                </div>
+                            </div>
+                            <div class="leaderboard-item current-user">
+                                <div class="rank-badge">47</div>
+                                <div class="player-info">
+                                    <span class="player-name">You</span>
+                                    <span class="player-score">8,760 XP</span>
+                                </div>
+                                <div class="player-skills">
+                                    <span class="skill-badge">Learning</span>
+                                    <span class="skill-badge">Growing</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VR Section -->
+        <section class="section-view hidden" id="vr">
+            <div class="section-container">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <i class="fas fa-vr-cardboard vr-effect"></i>
+                    </div>
+                    <div>
+                        <h1 class="section-title">VR Experiences</h1>
+                        <p class="section-subtitle">Immersive Virtual Learning Environments</p>
+                    </div>
+                </div>
+
+                <div class="vr-content">
+                    <!-- VR Environment Selection -->
+                    <div class="vr-environments">
+                        <h3>Choose Your Virtual Experience</h3>
+                        <div class="environment-grid" id="environmentGrid">
+                            <!-- Environments will be loaded by JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- VR Viewport -->
+                    <div class="vr-viewport-container">
+                        <div class="vr-viewport" id="vrViewport">
+                            <div class="vr-scene active" data-environment="ancient-rome">
+                                <div class="vr-environment-content">
+                                    <div class="roman-colosseum">
+                                        <div class="structure-element arch-1"></div>
+                                        <div class="structure-element arch-2"></div>
+                                        <div class="structure-element arch-3"></div>
+                                        <div class="gladiator-figure"></div>
+                                    </div>
+                                    <div class="historical-info">
+                                        <h4>The Colosseum - 80 AD</h4>
+                                        <p>Experience the grandeur of ancient Rome's greatest amphitheater</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="vr-scene" data-environment="space-station">
+                                <div class="vr-environment-content">
+                                    <div class="space-station-interior">
+                                        <div class="floating-astronaut"></div>
+                                        <div class="earth-view"></div>
+                                        <div class="scientific-equipment"></div>
+                                    </div>
+                                    <div class="science-info">
+                                        <h4>International Space Station</h4>
+                                        <p>Experience life and work in zero gravity</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="vr-scene" data-environment="ocean-depths">
+                                <div class="vr-environment-content">
+                                    <div class="underwater-scene">
+                                        <div class="marine-life fish-school"></div>
+                                        <div class="coral-reef"></div>
+                                        <div class="submarine"></div>
+                                    </div>
+                                    <div class="marine-info">
+                                        <h4>Ocean Ecosystem</h4>
+                                        <p>Explore marine biodiversity and conservation</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="vr-controls">
+                            <button class="vr-control-btn" data-action="interact">
+                                <i class="fas fa-hand-paper"></i> Interact
+                            </button>
+                            <button class="vr-control-btn" data-action="navigate">
+                                <i class="fas fa-arrows-alt"></i> Navigate
+                            </button>
+                            <button class="vr-control-btn" data-action="info">
+                                <i class="fas fa-info-circle"></i> Info
+                            </button>
+                            <button class="vr-control-btn" data-action="fullscreen">
+                                <i class="fas fa-expand"></i> Fullscreen
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- VR Session Stats -->
+                    <div class="vr-session-stats">
+                        <h3>Session Progress</h3>
+                        <div class="session-grid">
+                            <div class="session-stat">
+                                <div class="stat-icon"><i class="fas fa-clock"></i></div>
+                                <div class="stat-value">12:34</div>
+                                <div class="stat-label">Session Time</div>
+                            </div>
+                            <div class="session-stat">
+                                <div class="stat-icon"><i class="fas fa-eye"></i></div>
+                                <div class="stat-value">8</div>
+                                <div class="stat-label">Objects Explored</div>
+                            </div>
+                            <div class="session-stat">
+                                <div class="stat-icon"><i class="fas fa-graduation-cap"></i></div>
+                                <div class="stat-value">5</div>
+                                <div class="stat-label">Concepts Learned</div>
+                            </div>
+                            <div class="session-stat">
+                                <div class="stat-icon"><i class="fas fa-star"></i></div>
+                                <div class="stat-value">92%</div>
+                                <div class="stat-label">Completion</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Collaboration Section -->
+        <section class="section-view hidden" id="collaborate">
+            <div class="section-container">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <i class="fas fa-users collaboration-pulse"></i>
+                    </div>
+                    <div>
+                        <h1 class="section-title">Collaboration Hub</h1>
+                        <p class="section-subtitle">Connect, Learn, and Grow Together</p>
+                    </div>
+                </div>
+
+                <div class="collaboration-content">
+                    <!-- Collaboration Features -->
+                    <div class="collab-features">
+                        <h3>Collaboration Tools</h3>
+                        <div class="features-grid" id="collabFeaturesGrid">
+                            <!-- Features will be loaded by JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Active Connections -->
+                    <div class="active-connections">
+                        <h3>Your Learning Network</h3>
+                        <div class="connections-list" id="connectionsList">
+                            <!-- Connections will be loaded by JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Study Groups -->
+                    <div class="study-groups">
+                        <h3>Active Study Groups</h3>
+                        <div class="groups-grid">
+                            <div class="study-group-card">
+                                <div class="group-header">
+                                    <h4>Advanced JavaScript</h4>
+                                    <span class="group-status online">Live</span>
+                                </div>
+                                <div class="group-info">
+                                    <div class="group-members">
+                                        <div class="member-avatar"></div>
+                                        <div class="member-avatar"></div>
+                                        <div class="member-avatar"></div>
+                                        <span class="member-count">+5 more</span>
+                                    </div>
+                                    <div class="group-topic">Async/Await & Promises</div>
+                                </div>
+                                <div class="group-actions">
+                                    <button class="btn btn--primary btn--sm">Join Session</button>
+                                    <button class="btn btn--secondary btn--sm">View Notes</button>
+                                </div>
+                            </div>
+
+                            <div class="study-group-card">
+                                <div class="group-header">
+                                    <h4>Python Data Science</h4>
+                                    <span class="group-status scheduled">Scheduled</span>
+                                </div>
+                                <div class="group-info">
+                                    <div class="group-members">
+                                        <div class="member-avatar"></div>
+                                        <div class="member-avatar"></div>
+                                        <span class="member-count">+3 more</span>
+                                    </div>
+                                    <div class="group-topic">Machine Learning Basics</div>
+                                    <div class="group-time">Tomorrow 2:00 PM</div>
+                                </div>
+                                <div class="group-actions">
+                                    <button class="btn btn--outline btn--sm">Set Reminder</button>
+                                    <button class="btn btn--secondary btn--sm">Chat</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Global Map -->
+                    <div class="global-collaboration-map">
+                        <h3>Global Learning Community</h3>
+                        <div class="world-map">
+                            <div class="map-container">
+                                <div class="connection-dot americas" data-region="Americas">
+                                    <div class="pulse-ring"></div>
+                                    <div class="region-info">
+                                        <span class="region-name">Americas</span>
+                                        <span class="active-learners">2,847 learners</span>
+                                    </div>
+                                </div>
+                                <div class="connection-dot europe" data-region="Europe">
+                                    <div class="pulse-ring"></div>
+                                    <div class="region-info">
+                                        <span class="region-name">Europe</span>
+                                        <span class="active-learners">3,521 learners</span>
+                                    </div>
+                                </div>
+                                <div class="connection-dot asia" data-region="Asia">
+                                    <div class="pulse-ring"></div>
+                                    <div class="region-info">
+                                        <span class="region-name">Asia</span>
+                                        <span class="active-learners">5,674 learners</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Back Navigation -->
+        <button class="back-to-hub hidden" id="backToHub">
+            <i class="fas fa-home"></i>
+            <span>Back to Hub</span>
+        </button>
+
+        <!-- Accessibility Panel -->
+        <div class="accessibility-panel hidden" id="accessibilityPanel">
+            <div class="panel-header">
+                <h3><i class="fas fa-universal-access"></i> Accessibility Controls</h3>
+                <button class="close-panel" id="closePanelBtn">×</button>
+            </div>
+            <div class="panel-content">
+                <div class="access-control">
+                    <label class="control-label">
+                        <input type="checkbox" id="highContrast">
+                        <span class="control-text">High Contrast Mode</span>
+                    </label>
+                </div>
+                <div class="access-control">
+                    <label class="control-label">
+                        <input type="checkbox" id="largeText">
+                        <span class="control-text">Large Text</span>
+                    </label>
+                </div>
+                <div class="access-control">
+                    <label class="control-label">
+                        <input type="checkbox" id="reducedMotion">
+                        <span class="control-text">Reduced Motion</span>
+                    </label>
+                </div>
+                <div class="access-control">
+                    <label class="control-label">
+                        <input type="checkbox" id="screenReader">
+                        <span class="control-text">Screen Reader Mode</span>
+                    </label>
+                </div>
+                <div class="voice-controls">
+                    <button class="voice-btn" id="voiceBtn">
+                        <i class="fas fa-microphone"></i>
+                        <span>Voice Commands</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Achievement Notification -->
+        <div class="achievement-notification hidden" id="achievementNotification">
+            <div class="achievement-content">
+                <div class="achievement-icon">
+                    <i class="fas fa-trophy"></i>
+                </div>
+                <div class="achievement-text">
+                    <h4>Achievement Unlocked!</h4>
+                    <p id="achievementText">Explorer Badge</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Progress Indicator -->
+        <div class="progress-indicator">
+            <div class="progress-circle">
+                <svg viewBox="0 0 36 36">
+                    <path class="progress-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                    <path class="progress-bar" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" stroke-dasharray="0, 100"/>
+                </svg>
+            </div>
+            <div class="progress-text">
+                <span id="progressPercent">0%</span>
+                <small>Learning Progress</small>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
